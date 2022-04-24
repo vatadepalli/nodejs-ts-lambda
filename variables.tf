@@ -4,11 +4,13 @@ variable "aws_region" {
   default     = "ap-south-1"
 }
 
+# Lambda Code Bucket Variable
 variable "lambda_bucket_name" {
   description = "AWS S3 bucket name for storing Lambda function archive."
   type        = string
 }
 
+# Snowflake Variables
 variable "SNOWFLAKE_ACCOUNT" {
   type = string
 }
@@ -28,5 +30,13 @@ variable "SNOWFLAKE_WAREHOUSE" {
   type = string
 }
 variable "SNOWFLAKE_ROLE" {
+  type = string
+}
+
+# Auth0 Variables
+variable "AUTH0_ISSUER_URL" {
+  type = string
+}
+variable "AUTH0_AUDIENCE" {
   type = string
 }

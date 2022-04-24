@@ -36,9 +36,10 @@ export const handler = async (
 	return {
 		statusCode: 200,
 		body: JSON.stringify({
-			message: "Hello World!",
+			message: "Hello World! & Hello Everyone In It!",
 			queries,
 			snowflake_connection_id: connectionId,
 		}),
+		headers: { "content-type": "application/json" },
 	};
 };
