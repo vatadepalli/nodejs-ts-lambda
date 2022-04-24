@@ -1,0 +1,28 @@
+{
+  "name": "nodejs-ts-lambda",
+  "version": "1.0.0",
+  "description": "A nodejs typescript template for lambda projects",
+  "main": "dist/index.js",
+  "repository": "git@github.com:vatadepalli/nodejs-ts-lambda.git",
+  "author": "vatadepalli <vatadepalli@hotmail.com>",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev": "nodemon src/index.ts",
+    "clean": "rm -rf dist",
+    "build": "yarn && npm run clean && tsc",
+    "package": "yarn build && rm -rf && rm -rf node_modules && yarn install --production && zip -r function.zip . -i 'dist/*' -i 'node_modules/*' && rm -rf function && yarn"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.95",
+    "@types/node": "^17.0.25",
+    "@types/snowflake-sdk": "^1.6.3",
+    "nodemon": "^2.0.15",
+    "ts-node": "^10.7.0",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "snowflake-sdk": "^1.6.9"
+  }
+}
